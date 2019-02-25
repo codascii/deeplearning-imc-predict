@@ -1,0 +1,26 @@
+.silhouette-container {
+    border: 1px solid #e7e7e7;
+    border-radius: 20px;
+    padding: 0 30px;
+}
+
+.silhouette-container.preded {
+    border: 1px solid #ff00ff;
+    box-shadow: 0 0 6px #ff00ff;
+}
+
+.silhouette-container.preded .resultat-container {
+    
+    background-color: #ff00ff;
+    color: white;
+}
+
+.resultat-container {
+    background-color: #e7e7e7;
+    margin: 0 -30px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: center;
+}
+
+.resultat-container p{ margin: 0; padding: 15px 0; font-size: 1.2em; }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>IMC</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.15.1/dist/tf.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="epsi.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+                EPSI Lyon - Réseaux de neurones
+              </a>
+        </nav>
+        <p>&nbsp;</p>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p class="text-info"><i id="info">Vous devez faire l'apprentissage avant de pouvoir utiliser ce programme</i></p>
+                        <div>
+                            <label for="taille">Taille (cm) :</label>
+                            <input type="text" name="taille" disabled id="taille" class="form-control">
+                        </div>
+                        <div style="margin-top: 20px;">
+                            <label for="poids">Poids (Kg) :</label>
+                            <input type="text" name="poids" disabled id="poids" class="form-control">
+                        </div>
+                        <div style="margin-top: 20px;">
+                            <button class="btn btn-primary" disabled id="btn-predire" onclick="predire();">Prédire</button>
+                            <span class="text-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taux d'erreur : <span id="taux_erreur">1</span></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div style="margin-top: 20px;">
+                            <h5>Introduction</h5>
+                            <p>En vue d'appliquer nos connaissances théorique en deeplearning, nous avons décidé de développer un réseau de neurones.</p>
+                            <p> Le but est de prédir d'indice de masse corporelle des personnes après avoir apris sur une pléthore de données. Le réseau prend en entrée la taille de l'indivudu en cm et son poids exprimé en Kg.</p>
+                            <h5>Apprentissage</h5>
+                            <p>Avant de pouvoir tester notre programme, vous devez lui apprendre en cliquant sur ce button : <button class="btn btn-primary" id="runLearning" onclick="lancerLapprentissage();">Lancer l'apprentissage</button></p>
+                        </div>
+                    </div>
+                </div>
+                <p>&nbsp;</p>
+                <div class="row" style="display: flex; justify-content:center;">
+                    <div class="lg-3 silhouette-container" id="mince">
+                        <div>
+                            <img src="mince.png" alt="Image silhouette mince">
+                            <div class="resultat-container">
+                                <p id="pred_mince"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg-3 silhouette-container" id="normal" style="margin: 0 150px;">                        
+                        <div>
+                            <img src="normal.png" alt="Image silhouette normal">
+                            <div class="resultat-container">
+                                <p id="pred_normal"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg-3 silhouette-container" id="surpoids">                      
+                        <div>
+                            <img src="surpoids.png" alt="image silhouette surpoids">
+                            <div class="resultat-container">
+                                <p id="pred_surpoids"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&nbsp;</p>
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+</html>
